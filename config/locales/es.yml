@@ -1,0 +1,7 @@
+es:
+  plugins:
+    cama_external_menu:
+      admin:
+        form:
+          user_roles_to_see: 'Roles de usuarios que pueden ver este menú'
+          public_menu: ' --Menú Público-- '

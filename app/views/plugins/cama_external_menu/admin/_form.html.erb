@@ -1,0 +1,18 @@
+<% panel_id = "external_roles_#{Time.current.to_i}" %>
+<div class="form-group" id="<%= panel_id %>">
+    <label><%= t('.user_roles_to_see', default: 'User roles to see this menu') %></label><br>
+    <select class="roles_select" name="options[user_roles][]" multiple>
+        <% (current_site.user_roles_rel.all.unshift(Struct.new(:slug, :name).new("public_menu", t('.public_menu', default: ' --Public Menu-- ')))).each do |user_role| %>
+            <option value="<%= user_role.slug %>" <%= 'selected' if item_roles.include?(user_role.slug) %>><%= user_role.name %></option>
+        <% end %>
+    </select>
+</div>
+<script>
+    jQuery(function(){
+        var panel = $('#<%= panel_id %>');
+        panel.find('select.roles_select').selectpicker({width: '100%', noneSelectedText: ''});
+        panel.closest('form').on('reset', function(){
+            panel.find('select.roles_select').selectpicker('deselectAll');
+        });
+    });
+</script>

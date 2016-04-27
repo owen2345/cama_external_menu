@@ -1,0 +1,23 @@
+{
+  "title": "Cama External Menus",
+  "descr": "",
+  "key": "cama_external_menu",
+  "helpers": [
+    "Plugins::CamaExternalMenu::MainHelper"
+  ],
+  "hooks": {
+    "on_active": [
+      "cama_external_menu_on_active"
+    ],
+    "on_inactive": [
+      "cama_external_menu_on_inactive"
+    ],
+    "menu_external_form": [
+      "cama_external_menu_form"
+    ],
+    "on_external_menu": [
+      "cama_external_menu_on_external_menu"
+    ]
+    //here you can add all your hooks (read documentation)
+  }
+}

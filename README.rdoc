@@ -1,0 +1,2 @@
+= Permissions For External Menus (Camaleon CMS Plugin)
+This plugin permit to administrators to indicate which kind of users can see external menus.
