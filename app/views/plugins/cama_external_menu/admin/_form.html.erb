@@ -2,7 +2,7 @@
 <div class="form-group" id="<%= panel_id %>">
     <label><%= t('.user_roles_to_see', default: 'User roles to see this menu') %></label><br>
     <select class="roles_select" name="options[user_roles][]" multiple>
-        <% (current_site.user_roles_rel.all.unshift(Struct.new(:slug, :name).new("public_menu", t('.public_menu', default: ' --Public Menu-- ')))).each do |user_role| %>
+        <% (current_site.user_roles_rel.all.to_a.unshift(Struct.new(:slug, :name).new("public_menu", t('.public_menu', default: ' --Public Menu-- ')))).each do |user_role| %>
             <option value="<%= user_role.slug %>" <%= 'selected' if item_roles.include?(user_role.slug) %>><%= user_role.name %></option>
         <% end %>
     </select>
